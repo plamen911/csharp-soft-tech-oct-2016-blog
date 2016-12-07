@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace Blog.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         // GET: User
@@ -178,6 +179,75 @@ namespace Blog.Controllers.Admin
             }
 
             return admins;
+        }
+
+        //
+        // GET: User/Delete
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            using (var database = new BlogDbContext())
+            {
+                // Get the user from database
+                var user = database.Users
+                    .Where(u => u.Id == id)
+                    .First();
+
+                // Check if user exists
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+
+                // Pass user to view
+                return View(user);
+            }
+        }
+
+        // POST: User/Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            using (var database = new BlogDbContext())
+            {
+                // Get the user from database
+                var user = database.Users
+                    .Where(u => u.Id == id)
+                    .First();
+
+                // Check if user exists
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+
+                // Get user articles from database
+                var userArticles = database.Articles
+                    .Where(a => a.Author.Id == user.Id);
+
+                // Delete user articles
+                foreach (var article in userArticles)
+                {
+                    database.Articles.Remove(article);
+                }
+
+                // Delete user from database
+                database.Users.Remove(user);
+                database.SaveChanges();
+
+                // Redirect to index page
+                return RedirectToAction("List");
+            }
         }
     }
 }
