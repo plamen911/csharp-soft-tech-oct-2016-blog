@@ -216,8 +216,7 @@ namespace Blog.Controllers
                 using (var database = new BlogDbContext())
                 {
                     // Get article from database
-                    var article = database.Articles
-                        .FirstOrDefault(a => a.Id == model.Id);
+                    var article = database.Articles.FirstOrDefault(a => a.Id == model.Id);
 
                     // Set article properties
                     article.Title = model.Title;
