@@ -116,6 +116,12 @@ namespace Blog.Controllers
                     .Include(a => a.Author)
                     .First();
 
+                // Validating delete requests
+                if (!IsUserAuthorizedToEdit(article))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
+
                 // Check if article exists
                 if (article == null)
                 {
@@ -176,6 +182,12 @@ namespace Blog.Controllers
                     .Where(a => a.Id == id)
                     .First();
 
+                // Validating edit requests
+                if (!IsUserAuthorizedToEdit(article))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
+
                 // Check if article exists
                 if (article == null)
                 {
@@ -222,6 +234,14 @@ namespace Blog.Controllers
 
             // If model state is invalid, return the same view
             return View(model);
+        }
+
+        private bool IsUserAuthorizedToEdit(Article article)
+        {
+            bool IsAdmin = this.User.IsInRole("Admin");
+            bool IsAuthor = article.IsAuthor(this.User.Identity.Name);
+
+            return IsAdmin || IsAuthor;
         }
     }
 }
