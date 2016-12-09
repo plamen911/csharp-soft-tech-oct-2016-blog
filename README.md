@@ -26,4 +26,6 @@ C:\Users\PC>sqllocaldb s MSSQLLocalDB
 LocalDB instance "MSSQLLocalDB" started.
 ```
 
+`update-database -verbose` - in order to re-create database type-in in Package Manager Concsole
+
 
