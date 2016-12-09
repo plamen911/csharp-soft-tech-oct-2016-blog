@@ -1,6 +1,6 @@
 # csharp-soft-tech-oct-2016-blog
 
-[C# Blog doc. file with instructions](https://softuni.bg/trainings/resources/officedocument/11424/blog-advanced-functionality-exercises-software-technologies-october-2016) | [Software Technologies - октомври 2016](https://softuni.bg/trainings/1430/software-technologies-october-2016)
+[C# Blog doc. file with instructions](https://softuni.bg/downloads/svn/soft-tech/Sep-2016/Software-Technologies-Oct-2016/14.%20CSharp-Blog-Advanced-Functionality/14.%20Software-Technologies-CSharp-Blog-Advanced-Functionality.docx) | [Software Technologies - октомври 2016](https://softuni.bg/trainings/1430/software-technologies-october-2016)
 
 Fully-functional Blog system in ASP.NET MVC with SQL Server database using Entity Framework and MVC
 
@@ -12,7 +12,7 @@ SQL - Query language used for managing a database. In our case, Entity Framework
 
 ### SQL Server Installation
 
-[Windows 7/XP - Инсталиране на MSSQL Server](https://softuni.bg/trainings/resources/officedocument/11376/windows-7-xp-mssql-server-installation-software-technologies-october-2016)
+[Windows 7/XP - Инсталиране на MSSQL Server](https://softuni.bg/downloads/svn/soft-tech/Sep-2016/Software-Technologies-Oct-2016/12.%20CSharp-Blog-Basic-Functionality/12.%20Software-Technologies-SQL-Server-Installation-Win7.docx)
 
 From the Microsoft SQL Server 2014 Express download site download the SQLLocalDB 2014 and Management Studio 2014 installers from: https://www.microsoft.com/en-us/download/details.aspx?id=42299.
 
