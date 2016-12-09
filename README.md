@@ -1,4 +1,4 @@
-# csharp-soft-tech-oct-2016-blog
+# Blog system in ASP.NET MVC
 
 [C# Blog doc. file with instructions](https://softuni.bg/downloads/svn/soft-tech/Sep-2016/Software-Technologies-Oct-2016/14.%20CSharp-Blog-Advanced-Functionality/14.%20Software-Technologies-CSharp-Blog-Advanced-Functionality.docx) | [Software Technologies - октомври 2016](https://softuni.bg/trainings/1430/software-technologies-october-2016)
 
